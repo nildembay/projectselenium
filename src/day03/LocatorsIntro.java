@@ -20,6 +20,7 @@ import java.util.concurrent.TimeUnit;
  f. “Addresses” ve “Sign Out” textlerinin görüntülendiğini( displayed)
  doğrulayin(verify).
 3. Sayfada kac tane link oldugunu bulun.
+4.Linkleri yazdıralım...
 
  */
 
@@ -62,6 +63,14 @@ public class LocatorsIntro {
         }
         List<WebElement> linklistesi=driver.findElements(By.tagName("a"));
         System.out.println("Sayfada "+linklistesi.size()+ " tane link var");
+        for (WebElement w:linklistesi){
+            System.out.println(w.getText());
+
+        }
+
         driver.close();
+
+
+
     }
 }

@@ -25,9 +25,11 @@ public class GoogleSearchTest {
         driver.manage().window().maximize();
         driver.get("https://www.google.com/");
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
         WebElement searchBox=driver.findElement(By.name("q"));
         String arananKelime = "city bike";
-        searchBox.sendKeys(arananKelime+ Keys.ENTER);
+        searchBox.sendKeys(arananKelime);
+        searchBox.submit();
 
         WebElement sonucSayisi=driver.findElement(By.id("result-stats"));
         System.out.println("city bike icin sonuc sayisi \"" +sonucSayisi.getText()+"\"");
